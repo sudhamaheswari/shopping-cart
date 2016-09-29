@@ -27,15 +27,20 @@
     <sec:authorize access="hasRole('ROLE_ADMIN')">
       <li class="active"><a href="Admin">Home</a></li>
       </sec:authorize>
-      
-      <li><a href="ManageProduct">View Products</a></li>
+       <sec:authorize access="hasRole('ROLE_USER')">
+       <li class="active"><a href="Home">Home</a></li>      
+      </sec:authorize>
     </ul>
     <sec:authorize access="hasRole('ROLE_ADMIN')">
-    <sec:authorize access="hasRole('ROLE_USER')">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-    </ul>
+      </ul>
     </sec:authorize>
+  
+     <sec:authorize access="hasRole('ROLE_USER')">
+     <ul class="nav navbar-nav navbar-right">
+    <li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
     </sec:authorize>
   </div>
 </nav>

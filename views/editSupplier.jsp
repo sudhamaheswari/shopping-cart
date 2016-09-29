@@ -21,13 +21,12 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="Home">Home</a>
+      <a class="navbar-brand" href="Admin">Home</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="ManageProducts">Manage Products</a></li>
       <li><a href="ManageSupplier">Manage Suppliers</a></li>
-      <li><a href="ManageUsers">Manage Users</a></li>
-    </ul>
+  </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="Logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
@@ -37,12 +36,10 @@
    <form:form commandName="Supplier" method="post" action="updatesupplier">
        <table class="table table-bordered" >
 
-		   <tr><td><form:label path="id">Supplier Id:</form:label></td>
-               <td><form:input path="id" value="${supplier.id}"/></td>
-            </tr>             
-           <tr><td><form:label path="supid">Supplier Id:</form:label></td>
-               <td><form:input path="supid" value="${supplier.supid}"/></td>
-           </tr>
+		   
+             <form:input type="hidden" path="id" value="${supplier.id}"/>
+                        
+          
            <tr><td><form:label path="supname">Supplier Name :</form:label></td>
                <td><form:input path="supname" value="${supplier.supname}"/></td>
            </tr>           

@@ -34,7 +34,8 @@ public class ProductController {
 	SupplierDAO sd;
 
 	@ModelAttribute("Product")
-	public Product createProduct() {
+	public Product createProduct() 
+	{
 		
     return new Product();
 	}

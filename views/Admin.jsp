@@ -41,8 +41,7 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="ManageProduct">Manage Products</a></li>
       <li><a href="ManageSupplier">Manage Suppliers</a></li>
-      <li><a href="ManageUsers">Manage Users</a></li>
-    </ul>
+       </ul>
     <ul class="nav navbar-nav navbar-right">
     <li><a href="Admin">Welcome...<%=session.getAttribute("loggedInUser")%></a></li>
       <li><a href="logoutsuccess"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>

@@ -21,13 +21,12 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="Home">Home</a>
+      <a class="navbar-brand" href="Admin">Home</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="ManageProduct">Manage Products</a></li>
-      <li><a href="ManageCategory">Manage Categories</a></li>
+   
       <li><a href="ManageSupplier">Manage Suppliers</a></li>
-      <li><a href="ManageUsers">Manage Users</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="Logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -39,10 +38,7 @@
     <c:url var="addproduct" value="addproduct"></c:url>
    <form:form commandName="Product" method="post" action="storeproduct" enctype="multipart/form-data">
        <table class="table table-bordered" >
-       <tr><td><form:label path="Id">Product Id :</form:label></td>
-               <td><form:input path="Id"/>
-               <font color="red"><form:errors path="Id"></form:errors></font></td>
-           </tr>
+      
            <tr><td><form:label path="Name">Product Name :</form:label></td>
                <td><form:input path="Name"/>
                <font color="red"><form:errors path="Name"></form:errors></font></td>
@@ -73,7 +69,7 @@
            </tr>           
            <tr><td><form:label path="capacity">Product Capacity :</form:label></td>
                <td><form:input path="capacity"/>
-               <font color="red"><form:errors path="capavity"></form:errors></font></td>
+               <font color="red"><form:errors path="capacity"></form:errors></font></td>
            </tr>           
            <tr><td><form:label path="img">Product Image:</form:label></td>
                <td><form:input path="img" type="file"/>

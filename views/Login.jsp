@@ -38,7 +38,7 @@
       <li><a href="Products">View Products</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="reg"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
     </ul>
   </div>
 </nav>

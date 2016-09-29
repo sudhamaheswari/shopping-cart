@@ -72,7 +72,7 @@ public class UserController {
 			String str = auth.getName();
 			session = request.getSession(true);
 			session.setAttribute("loggedInUser", str);
-			ModelAndView m2 = new ModelAndView("ManageProduct");
+			ModelAndView m2 = new ModelAndView("Home");
 			return m2;
 		}
 		

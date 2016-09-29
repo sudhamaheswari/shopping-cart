@@ -32,9 +32,10 @@
       <li class="active"><a href="ManageProduct">Manage Products</a></li>
       <sec:authorize access="hasRole('ROLE_ADMIN')">
       <li><a href="ManageSupplier">Manage Suppliers</a></li>
-      <li><a href="ManageUsers">Manage Users</a></li>
       </sec:authorize>
     </ul>
+     <ul class="nav navbar-nav navbar-right">
+    <li><a href="Admin">Welcome...<%=session.getAttribute("loggedInUser")%></a></li>
     <ul class="nav navbar-nav navbar-right">
   <li><a href="${pageContext.request.contextPath}/Logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
@@ -45,22 +46,20 @@
 <div ng-app="myApp" ng-controller="customersCtrl">
 <table class="table table-striped table-hover">
   <tr>
-       <th>Product Id</th>
        <th>Product Name</th>
        <th>Product Price</th>
        <th>Product Description</th>
        <th>Action</th>
   </tr>
   <tr ng-repeat="x in names | filter:searchBy">
-    <td>{{x.Id}}</td>
     <td>{{x.Name}}</td>
     <td>{{x.Price}}</td>
     <td>{{x.Description}}</td>
     <td>
-    <a href="${pageContext.servletContext.contextPath}/viewproduct?id={{x.Id}}" class="btn btn-info"class="btn btn-info"><span>View</span></a>
+    <a href="${pageContext.servletContext.contextPath}/viewproduct?id={{x.id}}" class="btn btn-info"class="btn btn-info"><span>View</span></a>
     <sec:authorize access="hasRole('ROLE_ADMIN')">
-    <a href="${pageContext.servletContext.contextPath}/editproduct?id={{x.Id}}" class="btn btn-primary"><span>Edit</span></a>
-    <a href="${pageContext.servletContext.contextPath}/delete?id={{x.Id}}" class="btn btn-danger"><span>Delete</span></a>
+    <a href="${pageContext.servletContext.contextPath}/editproduct?id={{x.id}}" class="btn btn-primary"><span>Edit</span></a>
+    <a href="${pageContext.servletContext.contextPath}/delete?id={{x.id}}" class="btn btn-danger"><span>Delete</span></a>
    </sec:authorize>
    </td>  
   </tr>

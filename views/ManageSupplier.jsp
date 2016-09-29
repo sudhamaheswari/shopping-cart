@@ -26,10 +26,9 @@
 				
 			</div>
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="ManageProducts">Manage Products</a></li>
+				<li class="active"><a href="ManageProduct">Manage Products</a></li>
 				<li><a href="ManageSupplier">Manage Suppliers</a></li>
-				<li><a href="ManageUsers">Manage Users</a></li>
-			</ul>
+				</ul>
 			<ul class="nav navbar-nav navbar-right">
 				  <li><a href="${pageContext.request.contextPath}/Logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			</ul>
@@ -42,14 +41,12 @@
 			<table class="table table-striped table-hover">
 				<tr>
 					<th>Id</th>
-					<th>Supplier Id</th>
-					<th>Supplier Name</th>
+				<th>Supplier Name</th>
 					<th>Supplier Location</th>
 					<th>Action</th>
 				</tr>
 				<tr ng-repeat="z in names | filter:searchBy">
 					<td>{{z.id}}</td>
-					<td>{{z.supid}}</td>
 					<td>{{z.supname}}</td>
 					<td>{{z.suplocation}}</td>
 					<td><a

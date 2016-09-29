@@ -19,8 +19,6 @@ public class Supplier {
 	@Column(name = "Id")
 	private int id;
 	@NotNull
-	private int supid;
-	@NotNull
 	private String supname;
 	@NotNull
 	private String suplocation;
@@ -37,12 +35,6 @@ public class Supplier {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public int getSupid() {
-		return supid;
-	}
-	public void setSupid(int supid) {
-		this.supid = supid;
 	}
 	public String getSupname() {
 		return supname;
@@ -80,6 +72,5 @@ public class Supplier {
 	public void setProductname(String productname) {
 		this.productname = productname;
 	}
-	
-		
+			
 }

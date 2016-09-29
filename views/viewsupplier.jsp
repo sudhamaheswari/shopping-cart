@@ -22,12 +22,11 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="Home">Home</a>
+				<a class="navbar-brand" href="Admin">Home</a>
 			</div>
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="ManageProducts">Manage Products</a></li>
 				<li><a href="ManageSupplier">Manage Suppliers</a></li>
-				<li><a href="ManageUsers">Manage Users</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="${pageContext.request.contextPath}/Logout"><span>Logout</span></a></li>
@@ -40,7 +39,6 @@
             <thead>
 				<tr>
 					<th>Id</th>
-					<th>Supplier Id</th>
 					<th>Supplier Name</th>
 					<th>Supplier Location</th>
 					<th>Category Id</th>
@@ -51,7 +49,6 @@
 			</thead>
             <tr>
             <td>${supplier.id}</td>
-            <td>${supplier.supid}</td>
             <td>${supplier.supname}</td>
             <td>${supplier.suplocation}</td>
             <td>${supplier.categoryid}</td>
