@@ -28,22 +28,24 @@ import com.niit.shoppingcart.model.Supplier;
 @Controller
 public class ProductController {
 
-	@Autowired
+	@Autowired  //it will connects with ProductDAO with below object
 	ProductDAO pd;
 	@Autowired
 	SupplierDAO sd;
 
-	@ModelAttribute("Product")
-	public Product createProduct() {
+	@ModelAttribute("Product")  //@ModelAttribute refers to a property of the Model object (the M in MVC ;). @ModelAttribute is a Spring-MVC specific annotation used for preparing the model data. It is also used to define the command object that would be bound with the HTTP request data. The annotation works only if the class is a Controller class (i.e. annotated with @Controller).
+	public Product createProduct() 
+	{
 		
     return new Product();
 	}
 @RequestMapping("addproduct")
 	public ModelAndView display3() {
 
-		ModelAndView mv3 = new ModelAndView("addproduct");
-		mv3.addObject("supplier", new Supplier());
-        List suppliers= sd.list();
+		ModelAndView mv3 = new ModelAndView("addproduct");  //it will read the addProduct.jsp(name should be same as jsp)
+
+		mv3.addObject("supplier", new Supplier());  //we are adding the products to the particular supplier
+        List suppliers= sd.list();  //it will show the list of suppliers
         mv3.addObject("suppliers", suppliers);
         return mv3;
 	}
@@ -52,7 +54,7 @@ public class ProductController {
 		if (result.hasErrors()) {
 			return "addproduct";
 		}
-		String filename = product.getImg().getOriginalFilename();
+		String filename = product.getImg().getOriginalFilename();  //to store the product image
 		product.setImage(filename);
 
 		try {
@@ -86,7 +88,8 @@ public ModelAndView display11() {
 public @ResponseBody String showList()
 {
 	List list = pd.list();
-	Gson x = new Gson();
+	Gson x = new Gson();  //Gson is a Java library that can be used to convert Java Objects into their JSON representation.
+	//It can also be used to convert a JSON string to an equivalent Java object.
 	String json = x.toJson(list);
 	return json;
 }
@@ -95,9 +98,19 @@ public ModelAndView display8() {
 	ModelAndView m4 = new ModelAndView("viewproduct");
 	return m4;
 }
+@RequestMapping("/ShowProducts")
+public ModelAndView display6() {
+	ModelAndView m4 = new ModelAndView("ShowProducts");
+	return m4;
+}
 @RequestMapping("/viewproductuser")
 public ModelAndView display10() {
 	ModelAndView m4 = new ModelAndView("viewproductuser");
+	return m4;
+}
+@RequestMapping("/ShowProductuser")
+public ModelAndView display13() {
+	ModelAndView m4 = new ModelAndView("ShowProductuser");
 	return m4;
 }
 
@@ -117,11 +130,25 @@ public ModelAndView display9(){
 		Product product = pd.get(id);
 		return new ModelAndView("viewproduct", "product", product);
 	}
+	
+	@RequestMapping(value = "ShowProducts", method = RequestMethod.GET)
+	public ModelAndView viewPros(@RequestParam int id, @ModelAttribute Product products) {
+		Product product = pd.get(id);
+		return new ModelAndView("ShowProducts", "product", product);
+	}
+	
 	@RequestMapping(value = "viewproductuser", method = RequestMethod.GET)
 	public ModelAndView viewProuser(@RequestParam int id, @ModelAttribute Product products) {
 		Product product = pd.get(id);
 		return new ModelAndView("viewproductuser", "product", product);
 	}
+	
+	@RequestMapping(value = "ShowProductsuser", method = RequestMethod.GET)
+	public ModelAndView viewProuser1(@RequestParam int id, @ModelAttribute Product products) {
+		Product product = pd.get(id);
+		return new ModelAndView("ShowProductsuser", "product", product);
+	}
+	 
 	 
 
 	@RequestMapping("editproduct")
@@ -167,7 +194,12 @@ public ModelAndView display9(){
  }	 
 
 
+	@RequestMapping("Products")
+	public ModelAndView display20() {
+		ModelAndView m6 = new ModelAndView("Products");
+		return m6;
 
+	}		 
 
-
-}
+	
+	}

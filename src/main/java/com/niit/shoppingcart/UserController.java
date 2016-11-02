@@ -1,10 +1,3 @@
-//package com.niit.ShoppingCart;
-
-//public class UserController {
-
-//}
-
-
 package com.niit.shoppingcart;
 
 import java.util.List;
@@ -79,14 +72,15 @@ public class UserController {
 			String str = auth.getName();
 			session = request.getSession(true);
 			session.setAttribute("loggedInUser", str);
-			ModelAndView m2 = new ModelAndView("ManageProduct");
+			ModelAndView m2 = new ModelAndView("UserHome");
 			return m2;
 		}
 		
 	}
 	
+		
+	
+	
 
 }
-
-
 

@@ -13,18 +13,18 @@
 
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/</url-pattern><!-- while running an application it will go to the landing page -->
 	</servlet-mapping>
 
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/dispatcher-servlet.xml,/WEB-INF/application-security.xml</param-value>
+	<context-param><!-- This tag provides parameters to the entire context/web application -->
+		<param-name>contextConfigLocation</param-name><!-- it will link the dispatcher-servlet.xml and application.xml -->
+		<param-value>/WEB-INF/dispatcher-servlet.xml,/WEB-INF/application-security.xml,/WEB-INF/applicationContext.xml</param-value>
 	</context-param>
 
-	<listener>
+	<listener>  <!-- it listens the events that occur in web container -->
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<filter>
+	<filter><!-- typically used to perform a particular use of functionality of a web application is performed -->
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>

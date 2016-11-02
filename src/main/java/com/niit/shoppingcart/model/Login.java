@@ -53,4 +53,3 @@ public void setRole(String role) {
 
 
 }
-

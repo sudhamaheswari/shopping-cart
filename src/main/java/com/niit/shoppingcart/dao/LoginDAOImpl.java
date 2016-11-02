@@ -46,7 +46,8 @@ public class LoginDAOImpl implements LoginDAO {
 	}
 
 	@Transactional
-	public List getAllUsers() {
+	public List getAllUsers() {  //through this method we can get the list of all login users
+
 		Session session=sessionFactory.openSession();
 		List listlogin=session.createQuery("from User").list();
 		session.close();
@@ -67,15 +68,15 @@ public class LoginDAOImpl implements LoginDAO {
 		return null;
 	}
 	@Transactional
-	public Login getSingleUser(int id) {
+	public Login getSingleUser(int id) {  //to get a single user at a time
 		// TODO Auto-generated method stub
-		Session session=sessionFactory.openSession();
+		Session session=sessionFactory.openSession();  //always opens a new session that you have to close once you are done with the operations.
 		Login login=(Login)session.load(Login.class, id);
 		return login;
 		}
 	@Transactional
 	public List<Login> list() {
-		@SuppressWarnings("unchecked")
+		@SuppressWarnings("unchecked") //Indicates that the named compiler warnings 
 		List<Login> list = (List<Login>) sessionFactory.getCurrentSession()
 				.createCriteria(Login.class)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();

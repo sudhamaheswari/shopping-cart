@@ -12,20 +12,24 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.shoppingcart.model.Product;
 import com.niit.shoppingcart.model.Supplier;
-@EnableTransactionManagement
-@Repository("productDAO")
 
-public class ProductDAOImpl implements ProductDAO{
+@EnableTransactionManagement
+@Repository("productDAO")  //marks the specific class as a data access object
+
+public class ProductDAOImpl implements ProductDAO{  //this class implements the ProductDAO class
 	
 	
-	@Autowired
+	@Autowired  // to inject dependency at run time by spring.it connects to the ProductDAOimpl
 	private SessionFactory sessionFactory;
+	// Session Factory is not a singleton.it creates the session objects
 	
 	public ProductDAOImpl(SessionFactory sessionFactory){
 		this.sessionFactory = sessionFactory;
+		//this keyword is used to refer current class instance variable
 	}
-	@Transactional
-	public boolean save(Product product){
+	@Transactional// it defines the scope of single database transaction.the database transaction happens inside the scope of persistence context 
+	
+	public boolean save(Product product){ //for saving the product
 		try {
 			sessionFactory.getCurrentSession().save(product);
 			return true;
@@ -35,7 +39,7 @@ public class ProductDAOImpl implements ProductDAO{
 		}
 	}
 	@Transactional
-	public boolean update(Product product){
+	public boolean update(Product product){  //for updating the product
 		try {
 			sessionFactory.getCurrentSession().update(product);
 			return true;
@@ -57,7 +61,7 @@ public class ProductDAOImpl implements ProductDAO{
 		}
 	}*/
 	@Transactional
-	public void delete(int id)
+	public void delete(int id)  // to delete the product
 	{
 		Product ProductToDelete = new Product();
 		ProductToDelete.setId(id);

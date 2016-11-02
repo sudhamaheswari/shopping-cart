@@ -18,9 +18,9 @@
 		<!-- <intercept-url pattern="/ret/**" access="hasRole('ROLE_USER')"/> -->
 		<form-login login-page="/Login" login-processing-url="/j_spring_security_check" default-target-url="/welcome"  authentication-failure-url="/fail2login" />
         <logout delete-cookies="JSESSIONID" logout-url="/Logout" logout-success-url="/logoutsuccess"/>    
-        <csrf disabled="true"/> 
+        <csrf disabled="true"/><!-- -security token(cross site request forgery) --> 
     </http> 	 
-	<authentication-manager>
+	<authentication-manager> <!-- password challenge -->
 	<authentication-provider>
 	<jdbc-user-service data-source-ref="dataSource" 
 	 users-by-username-query="select username,password,status from login where username=?" 
