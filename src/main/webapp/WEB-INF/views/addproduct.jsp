@@ -18,7 +18,7 @@
 <title>Add a product</title>
 </head>
 <body>
-<nav class="navbar navbar-inverse"> <!--standard navbar is created-->
+<nav class="navbar navbar-inverse"> <!--standard navbar is"src/main/webapp/WEB-INF/views/addproduct.jsp" created-->
   <div class="container-fluid"> <!-- .container-fluid expands to fill the available width -->
     <div class="navbar-header">
       <a class="navbar-brand" href="Admin">Home</a> <!--  for your company, product, or project name -->
@@ -57,10 +57,7 @@ specifies the command object that the inner tags should bind to;enctype='multipa
                <td><form:input path="primarymaterial"/>
                <font color="red"><form:errors path="primarymaterial"></form:errors></font></td>
            </tr>           
-           <tr><td><form:label path="style">Product Style :</form:label></td>
-               <td><form:input path="style"/>
-               <font color="red"><form:errors path="style"></form:errors></font></td>
-           </tr>           
+            
            <tr><td><form:label path="warranty">Product Warranty :</form:label></td>
                <td><form:input path="warranty"/>
                <font color="red"><form:errors path="warranty"></form:errors></font></td>
@@ -69,10 +66,7 @@ specifies the command object that the inner tags should bind to;enctype='multipa
                <td><form:input path="quantity"/>
                <font color="red"><form:errors path="quantity"></form:errors></font></td>
            </tr>           
-           <tr><td><form:label path="capacity">Product Capacity :</form:label></td>
-               <td><form:input path="capacity"/>
-               <font color="red"><form:errors path="capacity"></form:errors></font></td>
-           </tr>           
+                
            <tr><td><form:label path="img">Product Image:</form:label></td>
                <td><form:input path="img" type="file"/>
                <font color="red"><form:errors path="img"></form:errors></font></td>  

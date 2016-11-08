@@ -50,15 +50,11 @@
                 <tr><td><form:label path="primarymaterial">Primary Material :</form:label></td>
                <td><form:input path="primarymaterial" value="${product.primarymaterial}"/></td>
            </tr>
-              <tr><td><form:label path="style">Style :</form:label></td>
-               <td><form:input path="style" value="${product.style}"/></td>
-           </tr>
+             
               <tr><td><form:label path="warranty">Warranty :</form:label></td>
                <td><form:input path="warranty" value="${product.warranty}"/></td>
            </tr>
-              <tr><td><form:label path="capacity">Capacity :</form:label></td>
-               <td><form:input path="capacity" value="${product.capacity}"/></td>
-           </tr>
+            
            <tr><td><form:label path="quantity">Quantity :</form:label></td>
                <td><form:input path="quantity" value="${product.capacity}"/></td>
            </tr>

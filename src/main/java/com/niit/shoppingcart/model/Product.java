@@ -47,18 +47,18 @@ public class Product {
 	@Size(min=2,max=30)
 	@Column(name="primarymaterial")
 	private String primarymaterial;
-	@NotNull
+	/*@NotNull
 	@Size(min=2,max=30)
 	@Column(name="style")
-	private String style;
+	private String style;*/
 	@NotNull
 	@Size(min=2,max=30)
 	@Column(name="warranty")
 	private String warranty;
-	@NotNull
+	/*@NotNull
 	@Size(min=2,max=30)
 	@Column(name="capacity")
-	private String capacity;
+	private String capacity;*/
 	@OneToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="supplier")
 	private Supplier supplier;
@@ -69,19 +69,19 @@ public class Product {
 	private String image;
 	@JsonIgnore
 	transient private MultipartFile img;
-	public Product(int id,String Name,String Description,String primarymaterial,String style,String warranty,String capacity,Supplier supplier,int supplierid,String suppliername,int quantity,double Price,String image,MultipartFile img) {
+	public Product(int id,String Name,String Description,String primarymaterial,String warranty,Supplier supplier,int supplierid,String suppliername,int quantity,double Price,String image,MultipartFile img) {
 	this.id=id;
 	this.Name = Name;
 	this.Description = Description;
 	this.primarymaterial = primarymaterial;
-	this.style = style;	
+	//this.style = style;	
 	this.warranty = warranty;
-	this.capacity = capacity;
+	//this.capacity = capacity;
 	this.supplier = supplier;
 	this.quantity = quantity;	
 	this.Price = Price;	
 	this.image = image;
-	this.img = img;	
+    this.img = img;	
 	}
 	 public Product() {
 	}
@@ -114,24 +114,24 @@ public class Product {
 	public void setPrimarymaterial(String primarymaterial) {
 		this.primarymaterial = primarymaterial;
 	}
-	public String getStyle() {
+	/*public String getStyle() {
 		return style;
 	}
 	public void setStyle(String style) {
 		this.style = style;
-	}
+	}*/
 	public String getWarranty() {
 		return warranty;
 	}
 	public void setWarranty(String warranty) {
 		this.warranty = warranty;
 	}
-	public String getCapacity() {
+	/*public String getCapacity() {
 		return capacity;
 	}
 	public void setCapacity(String capacity) {
 		this.capacity = capacity;
-	}
+	}*/
 	public Supplier getSupplier() {
 		return supplier;
 	}

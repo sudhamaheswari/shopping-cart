@@ -49,7 +49,7 @@
            <tr><td><form:label path="categoryid">Category Id :</form:label></td>
                <td><form:input path="categoryid"/>
                <font color="red"><form:errors path="categoryid"></form:errors></font></td>
-           </tr>           
+           </tr>         
            <tr><td><form:label path="categoryname">Category Name :</form:label></td>
                <td><form:input path="categoryname"/>
                <font color="red"><form:errors path="categoryname"></form:errors></font></td>
@@ -57,7 +57,7 @@
            <tr><td><form:label path="productid">Product Id :</form:label></td>
                <td><form:input path="productid"/>
                <font color="red"><form:errors path="productid"></form:errors></font></td>
-           </tr>           
+           </tr>       
            <tr><td><form:label path="productname">Product Name :</form:label></td>
                <td><form:input path="productname"/>
                <font color="red"><form:errors path="productname"></form:errors></font></td>

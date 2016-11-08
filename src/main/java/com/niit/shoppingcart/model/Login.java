@@ -18,7 +18,7 @@ public class Login {
 private int id;
 private String username;
 private String password;
-private String role="ROLE_USER";
+private String role="ROLE_ADMIN";
 private boolean status;
 public int getId() {
 	return id;
