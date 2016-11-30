@@ -1,37 +1,26 @@
-<web-app id="WebApp_ID" version="2.4"
-	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
- http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-
-	<display-name>Archetype Created Web Application</display-name>
-
+<web-app id="WebApp_ID" version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	
+	<display-name>Spring Web MVC Hello World Application</display-name>
+	
 	<servlet>
-		<servlet-name>dispatcher</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<servlet-name>spring</servlet-name>
+			<servlet-class>
+				org.springframework.web.servlet.DispatcherServlet
+			</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/</url-pattern><!-- while running an application it will go to the landing page -->
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<context-param><!-- This tag provides parameters to the entire context/web application -->
-		<param-name>contextConfigLocation</param-name><!-- it will link the dispatcher-servlet.xml and application.xml -->
-		<param-value>/WEB-INF/dispatcher-servlet.xml,/WEB-INF/application-security.xml,/WEB-INF/applicationContext.xml</param-value>
+      <context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring-servlet.xml,/WEB-INF/applicationContext.xml</param-value>
 	</context-param>
-
-	<listener>  <!-- it listens the events that occur in web container -->
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-	<filter><!-- typically used to perform a particular use of functionality of a web application is performed -->
-		<filter-name>springSecurityFilterChain</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-	</filter>
-
-	<filter-mapping>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-
 </web-app>
